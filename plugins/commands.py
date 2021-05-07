@@ -129,6 +129,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             await query.message.reply_to_message.delete()
         except:
             pass
+
+
 @Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(['start','batch']))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote = True)
