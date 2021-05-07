@@ -90,7 +90,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton("🔒 Close", callback_data = "close"),
-                        InlineKeyboardButton('⬇️ BACK', callback_data="back")
+                        InlineKeyboardButton("🤵Developer", url="https://t.me/diago_x")
                     ]
                 ]
             )
@@ -119,7 +119,7 @@ async def channel_post(client: Client, message: Message):
     base64_bytes = base64.b64encode(string_bytes)
     base64_string = base64_bytes.decode("ascii")
     link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("❓Check", url=f'{link}')]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("❓Check", url=f'{link}')],[InlineKeyboardButton("🙎‍♂DEVELOPER", url ="https://t.me/diago_x")]])
     await reply_text.edit(f"<b>✅ Your File Successfully Stored in my Database</b>\n\n🤔 You can check if it is stored or not by pressing check button", reply_markup=reply_markup, disable_web_page_preview = True)
 
 
