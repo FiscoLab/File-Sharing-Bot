@@ -90,7 +90,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton("🔒 Close", callback_data = "close"),
-                        InlineKeyboardButton("🙎‍♂DEVELOPER", url ="https://t.me/diago_x")
+                        InlineKeyboardButton('⬇️ BACK', callback_data='start')
                     ]
                 ]
             )
