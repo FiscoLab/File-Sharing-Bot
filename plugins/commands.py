@@ -107,30 +107,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             pass
 
 
-@Bot.on_callback_query()
-async def cb_handler(client: Bot, query: CallbackQuery):
-    data = query.data
-    if data == "help":
-        await query.message.edit_text(
-            text = f"<b>something</b>,
-            disable_web_page_preview = True,
-            reply_markup = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("🔒 Close", callback_data = "close"),
-                        InlineKeyboardButton("🙎‍♂DEVELOPER", url ="https://t.me/....")
-                    ]
-                ]
-            )
-        )
-    elif data == "close":
-        await query.message.delete()
-        try:
-            await query.message.reply_to_message.delete()
-        except:
-            pass
-
-
 @Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(['start','batch']))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote = True)
