@@ -90,6 +90,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton("🔒 Close", callback_data = "close")
+                        InlineKeyboardButton("🙎‍♂DEVELOPER", url = "https://t.me/diago_x")
                     ]
                 ]
             )
@@ -118,8 +119,8 @@ async def channel_post(client: Client, message: Message):
     base64_bytes = base64.b64encode(string_bytes)
     base64_string = base64_bytes.decode("ascii")
     link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
-    await reply_text.edit(f"<b>Here is your link</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview = True)
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("❓Check", url=f'{link}')]])
+    await reply_text.edit(f"<b>✅ Your File Successfully Stored in my Database</b>\n\n🤔 You can check if it is stored or not by pressing check button", reply_markup=reply_markup, disable_web_page_preview = True)
 
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
@@ -151,5 +152,5 @@ async def batch(client: Client, message: Message):
     base64_bytes = base64.b64encode(string_bytes)
     base64_string = base64_bytes.decode("ascii")
     link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
-    await second_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("❓Check", url=f'{link}')]])
+    await second_message.reply_text(f"<b>✅ Your File Successfully Stored in my Database</b>\n\n🤔 You can check if it is stored or not by pressing check button", quote=True, reply_markup=reply_markup)
